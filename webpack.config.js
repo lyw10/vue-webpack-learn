@@ -20,12 +20,26 @@ const config = {
         loader: "vue-loader",
       },
       {
+        test: /\.jsx$/,
+        loader: "babel-loader",
+      },
+      {
         test: /\.css$/,
         use: ["vue-style-loader", "css-loader"],
       },
       {
-        test: /\.styl$/,
-        use: ["style-loader", "css-loader", "stylus-loader"],
+        test: /\.styl/,
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              sourceMap: true, //stylus-loader编译的sourceMap可以直接用
+            },
+          },
+          "stylus-loader",
+        ],
       },
       {
         test: /\.(gif|jpg|jpeg|svg|png)$/,
