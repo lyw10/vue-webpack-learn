@@ -4,15 +4,18 @@
         
     </div>
     <Header></Header>
-        <Todo></Todo>
-        <Footer></Footer>
+<router-link to="/app">app</router-link>
+<router-link to="/login">login</router-link>
+    <router-view/>
+    <Footer></Footer>
 </div>
 </template>
 
 <script>
-import Header from './todo/header.vue'
-import Footer from './todo/footer.jsx'
-import Todo from './todo/todo.vue'
+import Header from './layout/header.vue'
+import Footer from './layout/footer.jsx'
+import Todo from './views/todo/todo.vue'
+// console.log(Header.docs)
 export default {
     components:{
         Header,
