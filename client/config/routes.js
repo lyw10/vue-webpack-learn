@@ -8,10 +8,34 @@ export default [
   },
   {
     path: "/app",
-    component: Todo,
+    // path: "/app/:id",
+    // props: true,
+    // props: (route) => ({ id: route.query.b }),
+    // component: Todo,
+    component: () => import("../views/todo/todo.vue"),
+    // components: {
+    //   default: Todo,
+    //   a: Login,
+    // },
+    name: "App",
+    //保存路由信息
+    meta: {
+      title: "app",
+      description: "this is app",
+    },
+    // children: [
+    //   {
+    //     path: "test",
+    //     component: Login,
+    //   },
+    // ],
   },
   {
     path: "/login",
     component: Login,
+    // components: {
+    //   default: Login,
+    //   a: Todo,
+    // },
   },
 ];
